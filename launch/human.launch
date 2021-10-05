@@ -1,0 +1,10 @@
+<launch>
+  <node name="human" pkg="dronedays2021" type="human" output="screen">
+    <rosparam>
+      name: Luke Skywalker
+      topic: /Luke/position
+      position: [-10, -10]
+      publication_freq: 100
+    </rosparam>
+  </node>
+</launch>

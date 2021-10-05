@@ -1,0 +1,28 @@
+<launch>
+  <node name="uav" pkg="dronedays2021" type="uav" output="screen">
+    <rosparam>
+      name: R2D2
+      position_topic: /R2D2/position
+      contribution_topic: /R2D2/contribution
+      visualization_uav_topic: /R2D2/visualization/uav
+      visualization_ugv_topic: /R2D2/visualization/ugv
+      visualization_human_topic: /R2D2/visualization/human
+      ugv_position_topic: /C3PO/position
+      ugv_contribution_topic: /C3PO/contribution
+      human_position_topic: /Luke/position
+      init_position: [10, 10, 5]
+      final_position: [10, -10, 8]
+      velocity: 2
+      publication_freq: 100
+      sensing_freq: 1
+      var_gps: 0.001 <!-- 3sigma 10cm -->
+      var_uwb: 0.5 <!-- 3sigma 15cm 0.0025-->
+      var_staticV: 0.01 <!-- educated guess -->
+      var_staticH: 0.0001 <!-- almost fixed -->
+      var_v: 0.0025  <!--3sigma 15cm -->
+      dt: 0.01 <!-- 100Hz -->
+      init_ugv_guess: [-0.1, 0.4] <!-- 0, 0 -->
+      init_human_guess: [-7, -14] <!-- 50, 50 -->
+    </rosparam>
+  </node>
+</launch>
